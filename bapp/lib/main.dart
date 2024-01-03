@@ -1,3 +1,4 @@
+import 'package:bapp/test.dart';
 import 'package:flutter/material.dart';
 
 void main(){ 
@@ -10,6 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        "test":(context) => test()
+      },
       home:Scaffold(
         backgroundColor:Colors.deepPurple,
         body:Column(
@@ -127,6 +131,9 @@ class MyApp extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+
+            SizedBox(height: 10,),
+
              Padding(
               padding: const EdgeInsets.only(left: 60 ,right: 60),
               child: Divider(
@@ -134,6 +141,10 @@ class MyApp extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+
+            RawMaterialButton(onPressed:(){
+              Navigator.pushNamed(context, "test");
+            })
 
           ],
           
